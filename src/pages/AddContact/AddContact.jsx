@@ -29,6 +29,10 @@ export default function AddContact () {
         favorite: Yup.boolean()
     })
 
+    const handleSubmit = (values) => {
+        console.log(values);
+    }
+
     return (
         <>
             <div className="container">
@@ -36,10 +40,10 @@ export default function AddContact () {
                     <div className="modal-header">
                         <h1 className='text-center'>Add new contact</h1>
                     </div>
-                    <Formik initialValues={initialValues} validationSchema={validationSchema}>
+                    <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
                         {({isSubmitting}) => (
                             <Form>
-                                <div className='mb-5'>
+                                <div className='mb-4'>
                                     <label htmlFor="firstName">First name</label>
                                     <Field type='text' name='firstName' id='firstName'/>
                                     <ErrorMessage name='firstName' component='p' className='text-danger position-absolute'/>
@@ -66,20 +70,22 @@ export default function AddContact () {
                                 </div>
                                 <div>
                                     <label htmlFor="gender">Gender</label>
-                                    <Field as='select' name='gender'/>
-                                    <option value="">Choose gender</option>
-                                    <option value="men">Men</option>
-                                    <option value="women">Women</option>
+                                    <Field as='select' name='gender'>
+                                        <option value="">Choose gender</option>
+                                        <option value="men">Men</option>
+                                        <option value="women">Women</option>
+                                    </Field>
                                     <ErrorMessage name='gender'/>
                                 </div>
                                 <div>
                                     <label htmlFor="status">Status</label>
-                                    <Field as='select' name='status'/>
-                                    <option value="">Choose gender</option>
-                                    <option value="work">Work</option>
-                                    <option value="family">Family</option>
-                                    <option value="friends">Friends</option>
-                                    <option value="others">Others</option>
+                                    <Field as='select' name='status'>
+                                        <option value="">Choose gender</option>
+                                        <option value="work">Work</option>
+                                        <option value="family">Family</option>
+                                        <option value="friends">Friends</option>
+                                        <option value="others">Others</option>
+                                    </Field>
                                     <ErrorMessage name='status'/>
                                 </div>
                                 <div>
