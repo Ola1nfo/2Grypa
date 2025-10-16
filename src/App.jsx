@@ -4,16 +4,18 @@ import NotFound from './pages/NotFound/NotFound';
 import AddContact from './pages/AddContact/AddContact';
 import EditContact from './pages/EditContact/EditContact';
 import ContactList from './pages/ContactList/ContactList';
+import Header from './components/Header/Header';
 
 function App() {
 
   return (
     <>
       <Router>
+        <Header />
         <Routes>
           <Route path="/" element={<ContactList />} />
-          <Route path="/add" element={<AddContact />} />
-          <Route path="/edit" element={<EditContact />} />
+          <Route path="/add-contact" element={<AddContact />} />
+          <Route path="/edit-contact" element={<EditContact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
