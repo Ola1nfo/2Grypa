@@ -2,12 +2,15 @@ import './AddContact.css'
 
 import * as Yup from 'yup'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
+import { useNavigate } from 'react-router-dom'
+import {v4 as uuidv4} from 'uuid'
 
 
 export default function AddContact () {
+    const navigate = useNavigate()
 
     const initialValues = {
-        id: '',
+        id: uuidv4(),
         firstName: '',
         lastName: '',
         phone: '',
@@ -31,6 +34,7 @@ export default function AddContact () {
 
     const handleSubmit = (values) => {
         console.log(values);
+        navigate('/')
     }
 
     return (

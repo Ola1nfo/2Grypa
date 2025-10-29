@@ -10,6 +10,7 @@ export default function Header () {
                             <div className="navbar-brand">
                                 <Link to='/' className='navbar-brand'>Contact List</Link>
                                 <Link to='/add-contact' className='navbar-brand'>Add Contact</Link>
+                                <Link to='/example' className='navbar-brand'>Example</Link>
                             </div>
                             <form className='d-flex' role='search'>
                                 <input type="search" className='form-control me-2' placeholder='Search' aria-label='Search'/>

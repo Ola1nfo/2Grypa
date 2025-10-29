@@ -5,6 +5,7 @@ import AddContact from './pages/AddContact/AddContact';
 import EditContact from './pages/EditContact/EditContact';
 import ContactList from './pages/ContactList/ContactList';
 import Header from './components/Header/Header';
+import Example from './components/Example/Example';
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
           <Route path="/add-contact" element={<AddContact />} />
           <Route path="/edit-contact" element={<EditContact />} />
           <Route path="*" element={<NotFound />} />
+          <Route path="/example" element={<Example />} />
         </Routes>
       </Router>
     </>
