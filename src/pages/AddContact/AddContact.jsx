@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom'
 import {v4 as uuidv4} from 'uuid'
 
 
-export default function AddContact () {
+export default function AddContact ({ addNewContact }) {
     const navigate = useNavigate()
 
     const initialValues = {
@@ -34,6 +34,7 @@ export default function AddContact () {
 
     const handleSubmit = (values) => {
         console.log(values);
+        addNewContact(values)
         navigate('/')
     }
 
@@ -69,7 +70,7 @@ export default function AddContact () {
                                 </div>
                                 <div>
                                     <label htmlFor="avatar">Avatar</label>
-                                    <Field type='text' name='avatar' id='avatar'/>
+                                    <Field type='number' max={99} min={0} name='avatar' id='avatar'/>
                                     <ErrorMessage name='avatar'/>
                                 </div>
                                 <div>
@@ -84,7 +85,7 @@ export default function AddContact () {
                                 <div>
                                     <label htmlFor="status">Status</label>
                                     <Field as='select' name='status'>
-                                        <option value="">Choose gender</option>
+                                        <option value="">Choose status</option>
                                         <option value="work">Work</option>
                                         <option value="family">Family</option>
                                         <option value="friends">Friends</option>
